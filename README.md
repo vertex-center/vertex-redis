@@ -15,7 +15,7 @@ Simple Redis wrapper to install Redis easily from the Vertex Installer.
 
 ## Install
 
-Vertex Redis is compatible with the Vertex Installer.
+Vertex Redis can be installed from [Vertex](https://github.com/vertex-center/vertex).
 
 ## Related
 
