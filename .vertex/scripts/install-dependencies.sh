@@ -3,6 +3,12 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
     brew install redis
     echo "$(redis-server -v)" installed.
 else
-    >&2 echo "$OSTYPE" is not supported to install redis automatically.
-    exit 1
+    wget https://download.redis.io/redis-stable.tar.gz
+    tar -xzvf redis-stable.tar.gz
+    cd redis-stable || exit 1
+    make
+    make install
+    cd .. || exit 1
+    rm -rf redis-stable
+    rm redis-stable.tar.gz
 fi
