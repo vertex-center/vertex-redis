@@ -15,7 +15,24 @@ Simple Redis wrapper to install Redis easily from the Vertex Installer.
 
 ## Install
 
+### Method 1: With Vertex
+
 Vertex Redis can be installed from [Vertex](https://github.com/vertex-center/vertex).
+
+### Method 2: Manually
+
+Download and install dependencies
+
+```bash
+git clone https://github.com/vertex-center/vertex-redis
+.vertex/scripts/install-dependencies.sh
+```
+
+Run
+
+```bash
+go run .
+```
 
 ## Related
 
