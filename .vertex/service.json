@@ -1,15 +1,18 @@
 {
-  "id": "vertex-redis",
-  "name": "Vertex Redis",
-  "repository": "github.com/vertex-center/vertex-redis",
-  "description": "A redis-server wrapper for Vertex. Good for caching and pub/sub.",
-  "environment": [
-    {
-      "type": "port",
-      "name": "PORT",
-      "display_name": "Server Port",
-      "default": "6379",
-      "description": "The port to expose the API of this server."
+    "id": "vertex-redis",
+    "name": "Vertex Redis",
+    "repository": "github.com/vertex-center/vertex-redis",
+    "description": "A redis-server wrapper for Vertex. Good for caching and pub/sub.",
+    "environment": [
+        {
+            "type": "port",
+            "name": "PORT",
+            "display_name": "Server Port",
+            "default": "6379",
+            "description": "The port to expose the API of this server."
+        }
+    ],
+    "dependencies": {
+        "redis": true
     }
-  ]
 }

@@ -21,18 +21,15 @@ Vertex Redis can be installed from [Vertex](https://github.com/vertex-center/ver
 
 ### Method 2: Manually
 
-Download and install dependencies
-
-```bash
-git clone https://github.com/vertex-center/vertex-redis
-.vertex/scripts/install-dependencies.sh
-```
-
-Run
-
-```bash
-go run .
-```
+1. Download
+    ```bash
+    git clone https://github.com/vertex-center/vertex-redis
+    ```
+2. Install [Redis](https://redis.io/docs/getting-started/installation/).
+3. Run
+    ```bash
+    go run .
+    ```
 
 ## Related
 
