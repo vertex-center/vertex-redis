@@ -4,6 +4,8 @@ import (
 	"fmt"
 	"os"
 	"os/exec"
+	"os/signal"
+	"syscall"
 
 	"github.com/caarlos0/env"
 	"github.com/joho/godotenv"
@@ -18,18 +20,32 @@ type Environment struct {
 
 var environment Environment
 
+var cmd *exec.Cmd
+
 func main() {
+	handleSignals()
+
 	loadEnv()
 
-	command := exec.Command("redis-server", "--port", environment.Port)
-	command.Stdout = os.Stdout
-	command.Stderr = os.Stderr
-	command.Stdin = os.Stdin
+	cmd = exec.Command("redis-server", "--port", environment.Port)
+	cmd.Stdout = os.Stdout
+	cmd.Stderr = os.Stderr
+	cmd.Stdin = os.Stdin
 
-	err := command.Run()
+	err := cmd.Run()
 	if err != nil {
 		panic(err)
 	}
+}
+
+func handleSignals() {
+	c := make(chan os.Signal)
+	signal.Notify(c, os.Interrupt, syscall.SIGTERM, syscall.SIGINT)
+	go func() {
+		<-c
+		_ = cmd.Process.Kill()
+		os.Exit(0)
+	}()
 }
 
 func loadEnv() {
