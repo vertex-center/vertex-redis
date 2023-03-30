@@ -1,3 +1,3 @@
 #!/bin/bash
 
-go run .
+exec go run .
