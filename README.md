@@ -31,6 +31,10 @@ Vertex Redis can be installed from [Vertex](https://github.com/vertex-center/ver
     go run .
     ```
 
+### Method 3: Docker
+
+Use the [Dockerfile](./Dockerfile) with Docker.
+
 ## Related
 
 See the [Vertex](https://github.com/vertex-center/vertex) repository to see other services available.

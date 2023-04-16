@@ -50,7 +50,7 @@ func handleSignals() {
 
 func loadEnv() {
 	err := godotenv.Load()
-	if err != nil {
+	if err != nil && !os.IsNotExist(err) {
 		logger.Error(fmt.Errorf("error loading .env file: %v", err))
 	}
 
