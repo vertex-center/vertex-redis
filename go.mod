@@ -1,4 +1,4 @@
-module github.com/quentinguidee/redis-service
+module github.com/quentinguidee/vertex-redis
 
 go 1.19
 
