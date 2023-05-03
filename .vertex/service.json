@@ -12,7 +12,18 @@
             "description": "The port to expose the API of this server."
         }
     ],
-    "dependencies": {
-        "redis": true
+    "methods": {
+        "script": {
+            "file": "start.sh",
+            "dependencies": {
+                "redis": true
+            }
+        },
+        "docker": {
+            "dockerfile": "Dockerfile",
+            "ports": [
+                "6379"
+            ]
+        }
     }
 }
