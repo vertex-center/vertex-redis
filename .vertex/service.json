@@ -19,6 +19,11 @@
                 "redis": true
             }
         },
+        "release": {
+            "dependencies": {
+                "redis": true
+            }
+        },
         "docker": {
             "dockerfile": "Dockerfile",
             "ports": {
